@@ -34,11 +34,7 @@ public class UserResource {
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<User> findById(@PathVariable Long id){
 		User objUser = userService.findById(id);
-		if(objUser != null) {
-			return ResponseEntity.ok().body(objUser);			
-		} else {
-			return ResponseEntity.noContent().build();			
-		}
+		return ResponseEntity.ok().body(objUser);
 	}
 	
 	@PostMapping
